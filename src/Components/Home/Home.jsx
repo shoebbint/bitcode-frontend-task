@@ -98,13 +98,13 @@ const Home = () => {
                         {item.CustomerName || "N/A"}
                       </td>
                       <td className="border border-gray-200 px-4 py-2">
-                        {item.TotalQuantity || "N/A"}
+                        {item.Quantity || "N/A"}
                       </td>
                       <td className="border border-gray-200 px-4 py-2">
                         {item.Price || "N/A"}
                       </td>
                       <td className="border border-gray-200 px-4 py-2">
-                        {item.TotalSpent || "N/A"}
+                        {item.Total || "N/A"}
                       </td>
                     </tr>
                   ))}
@@ -116,7 +116,7 @@ const Home = () => {
                     <td className="border border-gray-200 px-4 py-2">N/A</td>
                     <td className="border border-gray-200 px-4 py-2">
                       {reportData.reduce(
-                        (sum, item) => sum + (Number(item.TotalQuantity) || 0),
+                        (sum, item) => sum + (Number(item.Quantity) || 0),
                         0
                       )}
                     </td>
@@ -131,7 +131,7 @@ const Home = () => {
                     <td className="border border-gray-200 px-4 py-2">
                       {reportData
                         .reduce(
-                          (sum, item) => sum + (Number(item.TotalSpent) || 0),
+                          (sum, item) => sum + (Number(item.Total) || 0),
                           0
                         )
                         .toFixed(2)}
