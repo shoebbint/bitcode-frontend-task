@@ -11,7 +11,7 @@ const Home = () => {
     const fetchInitialData = async () => {
       try {
         // Call the endpoint to create the DB (no need to handle the response)
-        await axios.get("https://bitcode-task2-server.vercel.app/api/fetchdata");
+        await axios.get("http://localhost:5000/api/fetchdata");
       } catch (error) {
         console.error("Error fetching initial data:", error);
       }
@@ -27,7 +27,7 @@ const Home = () => {
 
     try {
       // Call your endpoint for report generation
-      const response = await axios.get("https://bitcode-task2-server.vercel.app/api/reports");
+      const response = await axios.get("http://localhost:5000/api/reports");
 
       console.log("Response data:", response.data); // Check the response data in the console
 
