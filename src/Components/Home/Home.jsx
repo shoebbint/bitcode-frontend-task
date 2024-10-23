@@ -65,7 +65,7 @@ const Home = () => {
 
       {/* Loading state indicator */}
       {loading ? (
-        <p>Loading report data...</p>
+        <span className="loading loading-spinner loading-lg text-warning"></span>
       ) : (
         <>
           {/* Display report data in a table if available */}
