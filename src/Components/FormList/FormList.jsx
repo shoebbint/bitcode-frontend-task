@@ -12,7 +12,7 @@ const FormList = () => {
     const fetchForms = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('http://localhost:5000/api/forms');
+        const response = await axios.get('https://bitcode-task2-server.vercel.app/api/forms');
         
         // Access the "data" property in the response
         const formData = response.data.data || []; // Fallback to an empty array if data is undefined
