@@ -10,20 +10,23 @@ const FormList = () => {
   useEffect(() => {
     // Fetch the form data when the component mounts
     const fetchForms = async () => {
-      try {
-        setLoading(true);
-        const response = await axios.get('https://bitcode-task2-server.vercel.app/api/forms');
-        
-        // Access the "data" property in the response
-        const formData = response.data.data || []; // Fallback to an empty array if data is undefined
-        setForms(formData);
-      } catch (err) {
-        setError('Failed to fetch forms.');
-        console.error('Error fetching forms:', err);
-      } finally {
-        setLoading(false);
-      }
-    };
+        try {
+          setLoading(true);
+          const response = await axios.get('https://bitcode-backend-task.vercel.app/api/forms');
+          
+          // Log the entire response to see the structure
+          console.log('API response:', response);
+      
+          const formData = response.data.data || []; // Fallback to an empty array if data is undefined
+          setForms(formData);
+        } catch (err) {
+          setError('Failed to fetch forms.');
+          console.error('Error fetching forms:', err);
+        } finally {
+          setLoading(false);
+        }
+      };
+      
 
     fetchForms();
   }, []);
